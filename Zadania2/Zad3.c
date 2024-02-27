@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <math.h>
 typedef struct{
     int x;
     int y;
@@ -15,33 +15,31 @@ void Zmien(Point *p){
 typedef struct{
     Point *p1;
     Point *p2;
+    Point *p3;
+    Point *p4;
 }Rectangle;
 
-void Pole_Obwod(Rectangle r){
+void Pole_Obwod(Rectangle *r){
     
-    
+    int dl = (sqrt(pow((*r).p1->x-(*r).p2->x,2)+pow((*r).p1->y-(*r).p2->y,2)));
+    printf("%d",(*r).p2->x);
 }
 
 int main()
 {
-    Point a;
-    a.x = 1;
-    a.y = 2;
+    Point a = {1,2};
     
     printf("Wartośc x to %d, a y to %d\n", a.x, a.y);
     Zmien(&a);
     printf("Wartośc x to %d, a y to %d\n", a.x, a.y);
     
-    Point b;
-    b.x = 5;
-    b.y = 7;
+    Point b = {3,5};
+    Point c = {5,7};
+    Point d = {7,9};
+    Rectangle rec1 = {&a, &b, &c, &d};
+    
+    Pole_Obwod(&rec1);
     
     
-    Rectangle rec1;
-    rec1.p1 = &a;
-    rec1.p2 = &b;
-    
-    
-    printf("Współrzędne to (%d,%d)", &(rec1.p1), &(rec1.p2));
     return 0;
 }
