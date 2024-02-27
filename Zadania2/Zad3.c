@@ -21,21 +21,23 @@ typedef struct{
 
 void Pole_Obwod(Rectangle *r){
     
-    int dl = (sqrt(pow((*r).p1->x-(*r).p2->x,2)+pow((*r).p1->y-(*r).p2->y,2)));
-    printf("%d",(*r).p2->x);
+    int dl = (sqrt(pow((*r).p2->x-(*r).p1->x,2)+pow((*r).p2->y-(*r).p1->y,2)));
+    int wys = (sqrt(pow((*r).p4->x-(*r).p3->x,2)+pow((*r).p4->y-(*r).p3->y,2)));
+    
+    printf("%d,", dl* wys);
 }
 
 int main()
 {
-    Point a = {1,2};
+    Point a = {3,4};
     
     printf("Wartośc x to %d, a y to %d\n", a.x, a.y);
     Zmien(&a);
     printf("Wartośc x to %d, a y to %d\n", a.x, a.y);
     
-    Point b = {3,5};
-    Point c = {5,7};
-    Point d = {7,9};
+    Point b = {1,1};
+    Point c = {1,5};
+    Point d = {4,1};
     Rectangle rec1 = {&a, &b, &c, &d};
     
     Pole_Obwod(&rec1);
