@@ -6,24 +6,22 @@ typedef struct {
     float grade;
 } student;
 
-void Sortuj(student *tab[]){
-    int pomocnicza = 0;
-    int czyposortowane = 0;
+void Sortuj(student *tab){
+    student pomocnicza ;
+    float czyposortowane = 0;
     do
     {
-        //Zmienna utrzymująca program do momentu
-        //posortowania w petli
+        
         czyposortowane = 0;
        
         for(int i=0; i<4; i++)
         {
-            //Wpisanie zmiennych z pomoca
-            //zmiennej pomocniczej
+            
             if(tab[i].grade<tab[i+1].grade)
             {
-                pomocnicza = tab[i].grade;
-                tab[i].grade = tab[i+1].grade;
-                tab[i+1].grade = pomocnicza;
+                pomocnicza = tab[i];
+                tab[i] = tab[i+1];
+                tab[i+1] = pomocnicza;
                 czyposortowane = 1;
             }
         }
@@ -31,7 +29,7 @@ void Sortuj(student *tab[]){
     }while(czyposortowane != 0);
     
     for(int i = 0; i<4; i++){
-        printf("%s %f", tab[i]->name, tab[i]->grade);
+        printf("%s %f \n", tab[i].name, tab[i].grade);
     }
 }
 
@@ -49,7 +47,7 @@ int main()
     tab[2] = st3;
     tab[3] = st4;
     
-    printf("%s %f",tab[0].name, tab[0].grade);
+    printf("%s %f\n\n",tab[0].name, tab[0].grade);
     
     Sortuj(tab);
     return 0;
