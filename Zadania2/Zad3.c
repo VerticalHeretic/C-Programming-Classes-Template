@@ -24,8 +24,10 @@ void Pole_Obwod(Rectangle *r){
     int dl = (sqrt(pow((*r).p2->x-(*r).p1->x,2)+pow((*r).p2->y-(*r).p1->y,2)));
     int wys = (sqrt(pow((*r).p4->x-(*r).p3->x,2)+pow((*r).p4->y-(*r).p3->y,2)));
     
-    printf("%d,", dl* wys);
+    printf("Pole tego prostokąta to %d,\n", dl* wys);
+    printf("Obwód tego prostokąta to %d", 2*dl + 2*wys);
 }
+
 
 int main()
 {
