@@ -4,6 +4,7 @@ int main()
 {
     
     int a = 1;
+    
     int * pointerA = &a;
     
     //Zwiększaamy wartość po wskaźniku
