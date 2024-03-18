@@ -27,10 +27,3 @@ jobs:
           exit 1
         fi
       shell: bash
-    - name: Upload Artifacts for Unix/Linux
-      uses: actions/upload-artifact@v3
-      with:
-        name: compiled-unix-linux
-        path: |
-          **/*
-        if-no-files-found: error
